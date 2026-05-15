@@ -2,9 +2,9 @@
 
 基于 **sing-box** 的一键多协议 VPN / 代理节点安装脚本。
 
-适合部署在小型 VPS 上，支持安装、管理、查看节点链接、生成二维码、用户管理和更新 sing-box 内核。
+适合部署在小型 VPS 上，支持一键安装、节点管理、二维码生成、用户管理和 sing-box 内核更新。
 
-> 项目致谢：张狗剩同志 https://x.com/goshenggo
+> 项目致谢：张狗剩同志 https://x.com/goshenggo  
 > 更多 VPN 教程：https://iwantrun.com/category/vpn-proxy
 
 ---
@@ -20,13 +20,13 @@
 
 ---
 
-## 演示图
+## 🖼️ 演示图
 
 ![自由档案馆一键多协议VPN脚本演示图](https://github.com/user-attachments/assets/7db67364-917d-494f-99f5-a1b6ee6245b0)
 
 ---
 
-## 支持协议
+## 🚀 支持协议
 
 - VLESS + REALITY + Vision
 - Hysteria2
@@ -36,20 +36,20 @@
 
 ---
 
-## 项目特色
+## ✨ 项目特色
 
 - **一键安装**：中文菜单，新手也能使用
 - **多协议支持**：一个脚本支持 5 种协议
-- **基于 sing-box**：统一核心，方便启动、停止、重启和更新
-- **自动随机端口**：也支持手动自定义端口
+- **基于 sing-box**：统一核心，方便管理和更新
+- **随机端口**：自动生成端口，也支持手动自定义
 - **二维码输出**：安装完成后自动显示节点链接和二维码
 - **用户管理**：支持增加用户、删除用户、查看用户
 - **适合小型 VPS**：体积小，依赖少，适合个人节点和备用节点
-- **统一服务管理**：所有协议统一由 `sing-box.service` 管理，后期维护更简单
+- **统一服务管理**：所有协议统一由 `sing-box.service` 管理
 
 ---
 
-## 推荐系统
+## 🖥️ 推荐系统
 
 推荐使用：
 
@@ -57,13 +57,17 @@
 Ubuntu 22.04 LTS
 ```
 
-也支持常见的 Debian、CentOS、Rocky Linux、AlmaLinux 等系统。
+也支持：
+
+```text
+Debian / CentOS / Rocky Linux / AlmaLinux
+```
 
 如果你是新手，建议优先选择 **Ubuntu 22.04**。
 
 ---
 
-## VPS 推荐
+## ☁️ VPS 推荐
 
 本脚本适合部署在常见小型 VPS 上，例如：
 
@@ -74,7 +78,6 @@ Ubuntu 22.04 LTS
 - Oracle Cloud
 - AWS Lightsail
 - Google Cloud
-- 其他支持 Linux 的 VPS
 
 推荐最低配置：
 
@@ -85,54 +88,42 @@ CPU：1 核
 系统：Ubuntu 22.04 / Ubuntu 24.04
 ```
 
-如果只是个人使用，小型 VPS 通常已经够用。
+个人使用或备用节点，小型 VPS 通常已经够用。
 
 ---
 
-## 使用前准备：如何登录 VPS
+## 🔐 使用前准备：登录 VPS
 
-在运行安装命令之前，你需要先通过 SSH 登录到你的 VPS 服务器。
+运行脚本前，需要先通过 SSH 登录 VPS。
 
-一般 VPS 服务商会提供：
+VPS 服务商通常会提供：
 
 ```text
 服务器 IP
 用户名
 密码 或 SSH 密钥
 ```
+
 ---
 
-## Windows 用户推荐 SSH 工具
+## 🪟 Windows 用户 SSH 工具
 
-Windows 10 / Windows 11 推荐使用系统自带的 SSH 工具。
+Windows 10 / Windows 11 推荐使用：
 
-打开：
+- Windows Terminal
+- PowerShell
+- PuTTY
+- Xshell
 
-```text
-Windows Terminal
-```
-
-或者：
-
-```text
-PowerShell
-```
-
-然后输入：
+打开 Windows Terminal 或 PowerShell 后输入：
 
 ```bash
 ssh root@你的服务器IP
 ```
 
-如果你喜欢图形界面，也可以使用：
-
-```text
-PuTTY或者Xshell
-```
-
 ---
 
-## macOS 用户推荐 SSH 工具
+## 🍎 macOS 用户 SSH 工具
 
 macOS 自带 SSH 工具。
 
@@ -148,25 +139,19 @@ macOS 自带 SSH 工具。
 ssh root@你的服务器IP
 ```
 
-例如：
+或者：
 
 ```bash
-ssh root@1.2.3.4
-```
-
-如果你使用的是普通用户，例如 `ubuntu`：
-
-```bash
-ssh ubuntu@1.2.3.4
+ssh ubuntu@你的服务器IP
 ```
 
 ---
 
-## 安装命令
+## ⚙️ 安装命令
 
 下面提供两种安装方式：`wget` 和 `curl`。
 
-**只需要选择其中一种执行，不要两条都执行。**
+**只需要选择其中一种执行，不需要两条都执行。**
 
 如果你的系统支持 `wget`，推荐使用第一种。  
 如果提示 `wget: command not found`，再使用第二种 `curl` 命令。
@@ -185,7 +170,7 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 ---
 
-## 菜单功能
+## 📋 菜单功能
 
 运行脚本后，会看到主菜单：
 
@@ -200,19 +185,19 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 ---
 
-## 协议介绍
+## 🧩 协议介绍
 
 | 选项 | 协议 | 工作原理 | 防封级别 | 推荐指数 |
 |---|---|---|---|---|
-| 1 | VLESS + REALITY + Vision | 使用 VLESS + REALITY，模拟正常 HTTPS/TLS 连接，不需要域名和证书 | ★★★★★ | ★★★★★ |
-| 2 | Hysteria2 | 基于 QUIC/UDP 传输，偏高速和抗丢包，适合弱网环境 | ★★★★☆ | ★★★★☆ |
-| 3 | AnyTLS | 较新的 TLS 方向协议，目标是让代理连接更接近普通 TLS 流量 | ★★★★☆ | ★★★☆☆ |
-| 4 | VLESS + gRPC + REALITY | 使用 VLESS + REALITY，并加入 gRPC 传输方式，和普通 TCP Reality 不同 | ★★★★☆ | ★★★☆☆ |
-| 5 | TUIC | 基于 QUIC/UDP 传输，偏低延迟和高速，路线和 Hysteria2 类似 | ★★★★☆ | ★★★★☆ |
+| 1 | VLESS + REALITY + Vision | 模拟正常 HTTPS/TLS 连接，不需要域名和证书 | ★★★★★ | ★★★★★ |
+| 2 | Hysteria2 | 基于 QUIC/UDP，偏高速和抗丢包 | ★★★★☆ | ★★★★☆ |
+| 3 | AnyTLS | 新型 TLS 方向协议，接近普通 TLS 流量 | ★★★★☆ | ★★★☆☆ |
+| 4 | VLESS + gRPC + REALITY | VLESS Reality + gRPC 传输方式 | ★★★★☆ | ★★★☆☆ |
+| 5 | TUIC | 基于 QUIC/UDP，偏低延迟和高速 | ★★★★☆ | ★★★★☆ |
 
 ---
 
-## 防火墙提醒
+## 🔥 防火墙提醒
 
 安装完成后，脚本会提示需要放行的端口，例如：
 
@@ -224,7 +209,7 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 如果端口没有放行，客户端可能无法连接。
 
-很多 VPS 商家的后台都有独立防火墙或安全组，例如：
+常见需要检查的防火墙：
 
 - Vultr Firewall
 - Linode Firewall
@@ -234,11 +219,11 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 - Google Cloud Firewall
 - Oracle Cloud Security List
 
-脚本可以尝试放行系统内部防火墙，但 VPS 后台的防火墙规则仍然需要你手动检查。
+脚本可以尝试放行系统内部防火墙，但 **VPS 后台防火墙 / 安全组仍然需要手动检查**。
 
 ---
 
-## 常见问题
+## ❓ 常见问题
 
 ### 1. 安装成功后为什么连不上？
 
@@ -250,23 +235,17 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 手动放行当前端口：12345/TCP
 ```
 
----
-
 ### 2. 是否需要域名？
 
 默认不需要域名。
 
 本脚本目前集成的协议可以免域名部署。
 
----
-
 ### 3. 是否需要证书？
 
 不需要手动申请证书。
 
 脚本会根据不同协议自动处理相关配置。
-
----
 
 ### 4. 如何查看节点二维码？
 
@@ -277,8 +256,6 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 ```
 
 脚本会显示节点链接和二维码。
-
----
 
 ### 5. 如何增加用户？
 
@@ -293,10 +270,6 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 ```text
 2. 增加用户
 ```
-
-即可添加新用户。
-
----
 
 ### 6. 如何重启服务？
 
@@ -318,8 +291,6 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 systemctl restart sing-box
 ```
 
----
-
 ### 7. 如何查看日志？
 
 运行脚本后选择：
@@ -340,8 +311,6 @@ systemctl restart sing-box
 journalctl -u sing-box -f --no-pager
 ```
 
----
-
 ### 8. 如何更新 sing-box 内核？
 
 运行脚本后选择：
@@ -358,8 +327,6 @@ journalctl -u sing-box -f --no-pager
 
 脚本会先备份当前配置，再更新 sing-box。
 
----
-
 ### 9. 如何卸载？
 
 运行脚本后选择：
@@ -372,7 +339,7 @@ journalctl -u sing-box -f --no-pager
 
 ---
 
-## 常用文件位置
+## 📁 常用文件位置
 
 ```text
 sing-box 程序：
@@ -390,7 +357,7 @@ systemd 服务：
 
 ---
 
-## 手动常用命令
+## 🛠️ 手动常用命令
 
 查看服务状态：
 
@@ -424,7 +391,7 @@ sing-box check -c /etc/sing-box/config.json
 
 ---
 
-## 致谢
+## 🙏 致谢
 
 特别感谢张狗剩同志：
 
@@ -438,6 +405,6 @@ https://iwantrun.com/category/vpn-proxy
 
 ---
 
-## License
+## 📄 License
 
 MIT License
