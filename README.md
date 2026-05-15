@@ -4,7 +4,7 @@
 
 适合部署在小型 VPS 上，支持安装、管理、查看节点链接、生成二维码、用户管理和更新 sing-box 内核。
 
-> 项目致谢：张狗剩同志（https://x.com/goshenggo）  
+> 项目致谢：张狗剩同志 https://x.com/goshenggo
 > 更多 VPN 教程：https://iwantrun.com/category/vpn-proxy
 
 ---
