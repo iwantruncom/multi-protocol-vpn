@@ -26,9 +26,9 @@
 
 ![自由档案馆一键多协议VPN脚本演示图](https://github.com/user-attachments/assets/7db67364-917d-494f-99f5-a1b6ee6245b0)
 
-### 协议安装演示
+### 安装演示
 
-![协议安装演示图](https://github.com/user-attachments/assets/c11652fe-6255-4e51-aef2-d43c64135616)
+![安装演示图](https://github.com/user-attachments/assets/c11652fe-6255-4e51-aef2-d43c64135616)
 
 ---
 
