@@ -178,7 +178,7 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 ## 📋 菜单功能
 
-运行脚本后，会看到主菜单：
+运行 `sudo bash vpn.sh` 后，会看到主菜单：
 
 ```text
 1. 安装 / 重装协议
@@ -188,6 +188,43 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 5. 卸载
 0. 退出
 ```
+
+---
+
+## 🔁 如何再次调出管理菜单
+
+安装完成后，如果以后需要再次进入管理菜单，只需要重新运行脚本即可。
+
+如果你当前目录里还保留着 `vpn.sh` 文件，直接执行：
+
+```bash
+sudo bash vpn.sh
+```
+
+运行后会重新打开主菜单：
+
+```text
+1. 安装 / 重装协议
+2. 管理当前服务
+3. 用户管理
+4. 查看当前节点链接
+5. 卸载
+0. 退出
+```
+
+如果你不确定 `vpn.sh` 是否还在服务器上，也可以重新下载并运行：
+
+```bash
+wget -O vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-vpn/main/vpn.sh && chmod +x vpn.sh && sudo bash vpn.sh
+```
+
+如果服务器没有 `wget`，可以使用 `curl`：
+
+```bash
+curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-vpn/main/vpn.sh && chmod +x vpn.sh && sudo bash vpn.sh
+```
+
+> 提醒：重新运行脚本不会自动重装协议，只有在菜单里选择“安装 / 重装协议”时，才会进行重新安装或覆盖配置。
 
 ---
 
@@ -255,7 +292,7 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 ### 4. 如何查看节点二维码？
 
-运行脚本后选择：
+运行 `sudo bash vpn.sh` 后选择：
 
 ```text
 4. 查看当前节点链接
@@ -265,7 +302,7 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 ### 5. 如何增加用户？
 
-运行脚本后选择：
+运行 `sudo bash vpn.sh` 后选择：
 
 ```text
 3. 用户管理
@@ -279,7 +316,7 @@ curl -L -o vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-v
 
 ### 6. 如何重启服务？
 
-运行脚本后选择：
+运行 `sudo bash vpn.sh` 后选择：
 
 ```text
 2. 管理当前服务
@@ -299,7 +336,7 @@ systemctl restart sing-box
 
 ### 7. 如何查看日志？
 
-运行脚本后选择：
+运行 `sudo bash vpn.sh` 后选择：
 
 ```text
 2. 管理当前服务
@@ -319,7 +356,7 @@ journalctl -u sing-box -f --no-pager
 
 ### 8. 如何更新 sing-box 内核？
 
-运行脚本后选择：
+运行 `sudo bash vpn.sh` 后选择：
 
 ```text
 2. 管理当前服务
@@ -335,13 +372,27 @@ journalctl -u sing-box -f --no-pager
 
 ### 9. 如何卸载？
 
-运行脚本后选择：
+运行 `sudo bash vpn.sh` 后选择：
 
 ```text
 5. 卸载
 ```
 
 确认后会删除 sing-box、配置文件和 systemd 服务。
+
+### 10. 如何再次打开管理菜单？
+
+如果服务器上还保留着 `vpn.sh`，直接执行：
+
+```bash
+sudo bash vpn.sh
+```
+
+如果找不到 `vpn.sh`，可以重新下载并运行：
+
+```bash
+wget -O vpn.sh https://raw.githubusercontent.com/iwantruncom/multi-protocol-vpn/main/vpn.sh && chmod +x vpn.sh && sudo bash vpn.sh
+```
 
 ---
 
